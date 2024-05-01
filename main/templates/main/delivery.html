@@ -1,0 +1,38 @@
+{% extends "main/base.html" %}
+
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static "deps/css/my_footer_css.css" %}">
+{% endblock %}
+
+{% block title %}
+    <title>{{ title }}</title>
+{% endblock %}
+
+{% block content %}
+    <h1 class="mt-5 pt-5"><strong>{{ title }}</strong></h1>
+    <p class="mt-2 pt-3 bg-white"><strong>{{ content }}</strong></p>
+
+     <h1>Products:</h1>
+    {% if products %}
+        <div>
+            {% for product in products %}
+                <div>
+                    <p>Name: {{ product }}</p>
+
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <h3>No Product Yet</h3>
+    {% endif %}
+{% endblock %}
+
+{% block footer %}
+    <footer class="py-4 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Home Python Hub Studio 2023</p>
+        </div>
+    </footer>
+{% endblock %}
